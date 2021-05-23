@@ -1,0 +1,96 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "montserrat";
+  background-color: #708d00;
+}
+.card{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) perspective(2000px);
+  box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5), 0 20px 100px rgba(0, 0, 0, 0.5);
+  transition: 1s;
+}
+.card img{
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover{
+  transform: translate(-50%, -50%) perspective(2000px) rotate(-10deg);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5), 0 10px 100px rgba(0, 0, 0, 0.5);
+}
+.card::before{
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #475b02;
+  transform-origin: bottom;
+  transform: skewX(-45deg);
+}
+
+.card::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 5px;
+  height: 100%;
+  background-color: #7EA301;
+  transform-origin: left;
+  transform: skewY(-45deg);
+}
+.card .imgbox{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-origin: left;
+  transition: 1s;
+  z-index: 1;
+}
+
+.imgbox img{
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  position: absolute;
+}
+
+.card:hover .imgbox{
+  transform: rotateY(-135deg);
+}
+
+.card .details h3, .card .details p {
+  background: transparent;
+  color: #fff;
+  font-weight: 300;
+  font-family: stroke;
+}
+.card .details{
+  position: absolute;
+  left: 0;
+  top: 222px;
+  box-sizing: border-box;
+  z-index: -1;
+  padding: 15px 15px;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.details h3{
+  text-align: center;
+}
+.details p{
+  text-align: justify;
+}
